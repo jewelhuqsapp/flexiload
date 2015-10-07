@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale = 1.0" />
+<meta name="author" content="FamousThemes" />
+<meta name="description" content="Get in the spotlight" />
+<meta name="keywords" content="premium css templates, premium wordpress themes, famous themes, themeforest" />
+<title>Bkash</title>
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/flexiload.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+var $ = jQuery.noConflict();
+var ProgramId;
+	$(function() {
+		$('#activator').click(function(){
+				$('#box').animate({'top':'66px'},500);
+		});
+		$('#boxclose').click(function(){
+				$('#box').animate({'top':'-400px'},500);
+		});
+		$('#activator_share').click(function(){
+				$('#box_share').animate({'top':'65px'},500);
+		});
+		$('#boxclose_share').click(function(){
+				$('#box_share').animate({'top':'-400px'},500);
+		});
+	});
+	$(document).ready(function(){
+	$(".toggle_container").hide(); 
+	$(".trigger").click(function(){
+		$(this).toggleClass("active").next().slideToggle("slow");
+		return false;
+	});
+	
+	});
+	
+	ProgramId = getParameterByName('id');
+	
+	
+	$(function () {
+	$('#Id').val(ProgramId);
+	$('#IdText').html(ProgramId);	
+	
+	
+	})
+
+
+	getBkashListing();
+	
+	
+	
+</script>
+<!-- Hide Mobiles Browser Navigation Bar -->
+<script type="text/javascript">
+	window.addEventListener("load",function() {
+	// Set a timeout...
+	setTimeout(function(){
+	// Hide the address bar!
+	window.scrollTo(0, 1);
+	}, 0);
+	});
+</script>
+</head>
+
+<body>
+<div id="main_container">
+	<div class="header">
+    <a href="dashboard.html" class="left_bt">home</a>
+    <span id="IdText"">ggg</span>
+    <a href="#" class="right_bt" id="activator"><img src="images/search.png" alt="" title="" border="0" /></a>
+    </div>
+    
+        <div class="box" id="box">
+        	<div class="box_content">
+            
+            	<div class="box_content_tab">
+                Search
+                </div>
+                
+                <div class="box_content_center">
+                <div class="form_content">
+                <form>
+               
+			    <div class="social_share">
+                        <ul>
+                        <li><a href="#"><img src="images/social/rss.png" alt="" title="" border="0" /></a></li>
+                        <li><a href="#"><img src="images/social/google.png" alt="" title="" border="0" /></a></li>
+                        
+                        </ul>
+                        </div>
+    
+				
+                <a class="boxclose" id="boxclose">Close</a>
+                <input type="submit" class="form_submit" value="Submit" />
+                </form>
+                </div> 
+                
+                <div class="clear"></div>
+                </div>
+            
+           </div>
+        </div>
+
+    
+        
+        
+	<div class="content">
+    	
+    <div  class="box_content_tab" id='serverbalance'></div> 
+	<div  class="box_content_tab" id=''><h3>Updating.....</h3></div> 
+			
+            </div>   
+        <div class="shadow_wrap"></div>
+        
+   		<div class="clear_left"></div>
+
+    
+    </div>
+
+
+</div>
+<div id="footer">
+<span><script>document.write(footer);</script></span>
+<a onclick="jQuery('html, body').animate( { scrollTop: 0 }, 'slow' );"  href="javascript:void(0);" title="Go on top" class="right_bt"><img src="images/top.png" alt="" title="" border="0" /></a>
+</div>
+</body>
+
+
+</html>
