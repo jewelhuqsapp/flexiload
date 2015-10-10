@@ -72,36 +72,7 @@ var ProgramId;
     <a href="logout.html" class="right_bt" id="activator"><img src="images/search.png" alt="" title="" border="0" /></a>
     </div>
     
-        <div class="box" id="box">
-        	<div class="box_content">
-            
-            	<div class="box_content_tab">
-                Search
-                </div>
-                
-                <div class="box_content_center">
-                <div class="form_content">
-                <form>
-               
-			    <div class="social_share">
-                        <ul>
-                        <li><a href="#"><img src="images/social/rss.png" alt="" title="" border="0" /></a></li>
-                        <li><a href="#"><img src="images/social/google.png" alt="" title="" border="0" /></a></li>
-                        
-                        </ul>
-                        </div>
-    
-				
-                <a class="boxclose" id="boxclose">Close</a>
-                <input type="submit" class="form_submit" value="Submit" />
-                </form>
-                </div> 
-                
-                <div class="clear"></div>
-                </div>
-            
-           </div>
-        </div>
+      
 
         
         
@@ -116,9 +87,18 @@ var ProgramId;
                     <div class="form_content">
                     <form>
                     <label>Phone:</label>
-                    <input type="text" name="phone" id="phone" class="form_input" />
+                    <input type="text"  name="account_number" id="account_number" class="form_input" />
                     <label>Amount:</label>
                     <input type="text" name="amount" id="amount"  class="form_input" />
+					<label>Pin:</label>
+                    <input type="text" name="ownpin" id="ownpin"  class="form_input" />
+					
+					<label>Type:</label>
+					<select name="load_type" class="checkbox">
+					<option value="Personal">Personal</option>
+					<option value="Agent">Agent</option>
+					</select>
+					
                     <input type="hidden" id ="Id" name="Id" value="">
 					
                     

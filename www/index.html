@@ -30,14 +30,18 @@
             if($('#username').val().length > 0 && $('#password').val().length > 0){
                 // Send data to server through the Ajax call
                 // action is functionality we want to call and outputJSON is our data
-                    $.ajax({url: 'check.php',
+                    $.ajax({url: weburl+'check.php',
                         data: {action : 'login', username: $('#username').val(),password:$('#password').val()},
                         type: 'post',                   
                        
                         success: function (result) { 
 						
-                            if(result!="error") {
-                             localStorage.setItem("token",result);
+						var partsOfStr = result.split('#');
+						
+						
+						
+                            if(partsOfStr[0]=="success") {
+                             localStorage.setItem("token",partsOfStr[1]);
                                window.location.replace("dashboard.html"); 
                             } else {
                                 alert('Logon unsuccessful!'); 

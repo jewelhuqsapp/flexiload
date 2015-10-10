@@ -1,7 +1,7 @@
 var footer="&copy copyright bmrs24";
 var header="welcome to bmrs24";
 
-var weburl ="http://demo.autoflexisoftware.com/mobile2/";
+var  weburl ="http://bmrs24.com/omobile/";
 
 
 function getParameterByName(name) {

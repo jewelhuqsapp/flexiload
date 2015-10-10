@@ -13,7 +13,7 @@ function checkAuth()
 function getBalance()
 				{
 
-
+						checkAuth();
 						$.ajax({url: weburl+'action.php',
                         data: {action : 'getbalance', token:localStorage.getItem("token")},
                         type: 'post',                   
@@ -33,6 +33,7 @@ function getBalance()
          var phone      = $("#phone").val();
          var amount     = $("#amount").val();
          var load_type  = $("#load_type").val();
+		 var ownpin     = $("#ownpin").val();
          message    	= "";     
             
 			
@@ -44,7 +45,7 @@ function getBalance()
                
 
                     $.ajax({url: weburl+'action.php',
-                        data: {action : 'makeflexiload', phone: phone,amount:amount,load_type:load_type,token:localStorage.getItem("token")},
+                        data: {action : 'makeflexiload',ownpin:ownpin, phone: phone,amount:amount,load_type:load_type,token:localStorage.getItem("token")},
                         type: 'post',                   
                        
                         beforeSend: function() {
@@ -75,9 +76,11 @@ function getBalance()
     function makeBkash () {  
 		checkAuth();
 		
-         var phone      = $("#phone").val();
-         var amount     = $("#amount").val();
-		 var load_type    =  $("#Id").val();
+         var account_number       = $("#account_number").val();
+         var amount      = $("#amount").val();
+		 var bank_name   = $("#Id").val();
+		 var load_type   = $("#load_type").val();
+		  var ownpin     = $("#ownpin").val();
          message    = "";     
                 
       
@@ -86,7 +89,7 @@ function getBalance()
                
 
                     $.ajax({url: weburl+'action.php',
-                        data: {action : 'makebkash',phone: phone,amount:amount,load_type:load_type,token:localStorage.getItem("token")},
+                        data: {action : 'makebkash',bank_name:bank_name,load_type:load_type,ownpin:ownpin,account_number: account_number,amount:amount,load_type:load_type,token:localStorage.getItem("token")},
                         type: 'post',                   
                        
                         beforeSend: function() {
@@ -173,7 +176,7 @@ function getBkashListing(){
 checkAuth();
 // ignore this first line (its fidle mock) and it will return what ever you pass as json:... parameter... consider to change it to your ajax call
 $.ajax({
-    url: 'action.php',
+    url: weburl+'action.php',
     type: "post",
     dataType: "json",
    data: {action : 'getBkashHistory',token:localStorage.getItem("token")},
@@ -207,12 +210,11 @@ function drawBkashTable(data) {
 function drawBkashRow(rowData) {
     var row = $("<tr />")
     $("#personDataTableBkash").append(row); //this will append tr element to table... keep its reference for a while since we will add cels into it
-    row.append($("<td>" + rowData.id + "</td>"));
-    row.append($("<td>" + rowData.phone+ "</td>"));
-    row.append($("<td>" + rowData.balance + "</td>"));
+    row.append($("<td>" + rowData.account_number+ "</td>"));
+    row.append($("<td>" + rowData.money + "</td>"));
     row.append($("<td>" + rowData.s_date+ "</td>"));
     row.append($("<td>" + rowData.status+ "</td>"));
-    row.append($("<td>" + rowData.load_type+ "</td>"));
+    row.append($("<td>" + rowData.bank_name+ "</td>"));
 }
 
 

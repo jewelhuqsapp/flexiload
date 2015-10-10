@@ -89,12 +89,14 @@ getBalance();
                     <input type="text" name="phone" id="phone" class="form_input" />
                     <label>Amount:</label>
                     <input type="text" name="amount" id="amount"  class="form_input" />
+					
                     <label>Type:</label>
 					<select name="load_type" class="checkbox">
 					<option value="prepaid">Prepaid</option>
 					<option value="postpaid">Postpaid</option>
 					</select>
-                    
+                    <label>Pin:</label>
+                    <input type="text" name="ownpin" id="ownpin"  class="form_input" />
                     
                     <input type="button"  onclick="makeFlexiload()" name="submit" id="request_flexi_submit" value="Submit" class="form_submit_right"  />
                     </form>

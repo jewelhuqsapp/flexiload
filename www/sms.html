@@ -37,15 +37,6 @@ var ProgramId;
 	
 	});
 	
-	ProgramId = getParameterByName('id');
-	
-	
-	$(function () {
-	$('#Id').val(ProgramId);
-	$('#IdText').html(ProgramId);	
-	
-	
-	})
 
 
 	
@@ -89,7 +80,7 @@ var ProgramId;
                     <input type="text" name="phone" id="phone" class="form_input" />
                     <label>message:</label>
                     <input type="text" name="msg" id="msg"  class="form_input" />
-                    <input type="button"  onclick="makeFlexiload()" name="submit" id="request_flexi_submit" value="Submit" class="form_submit_right"  />
+                    <input type="button"  onclick="sendSms()" name="submit" id="request_flexi_submit" value="Submit" class="form_submit_right"  />
                     </form>
                 </div>
                 
